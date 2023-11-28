@@ -1,0 +1,176 @@
+@import "../css/geral/global.css";
+/* fONTE */
+@font-face {
+  font-family:bernier ;
+  src: url("./fonts/BERNIER™\ Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* HEADER */
+.header-bg {
+  background-color: black;
+}
+/* NAVBAR */
+.div-nav {
+  margin-right: 30px;
+}
+.navbar-nav a {
+  position: relative;
+}
+.nav-item .text-size {
+  font-size: 24px;
+}
+.nav-item a:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0px;
+  background:#F9943B;
+  margin-top: 2px;
+  transition: 0.8s;
+  position: absolute;
+}
+.navbar-nav a:hover:after,
+.navbar-nav a.ativo::after {
+  width: 80%;
+}
+/* INTRODUÇAO */
+.introducao-bg {
+  color: white;
+  background-color: black;
+  box-shadow: inset 0 -100px #fff;
+}
+.introducao-bg img {
+  max-width: 100%;
+}
+/* LISTA DE MOTOS */
+.moto-lista {
+  padding: 20px 0;
+}
+.moto-lista img {
+  max-width: 100%;
+  width: 300px;
+  height: 200px;
+}
+/* SEGURO */
+.seguro-bg {
+  margin: 20px 0;
+  background-color: rgb(174, 146, 146);
+  box-shadow: inset 0 -100px #fff;
+  padding: 40px 0;
+}
+.seguro-bg img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+/* LOGIN */
+.background-image {
+  background-image: url('../img/model1.jpg');/* Substitua 'sua-imagem.jpg' pelo caminho da sua imagem */
+  background-size: cover;
+  height: 100vh; /* 100% da altura da tela */
+}
+.div-form {
+  width: 400px;
+}
+.form-control {
+  border: 2px solid #F9943B;
+}
+.cadastrar {
+  margin: 40px 0;
+}
+.form-detalhe:hover {
+  color: #F9943B;
+}
+/* Responsividade login */
+@media(max-width:700px) {
+  .row {
+    position: relative;
+    display: block;
+  }
+  .div-form {
+    position: absolute;
+    top: 40px;
+  }
+  .background-image {
+    background-image: none;
+  }
+  }
+/* CADASTRO */
+.container-fluid {
+  width: 800px;
+}
+/* TELA DE SEGUROS */
+.div-seguro {
+  margin: 60px 0;
+}
+.card {
+  position: relative;
+}
+.card-li {
+  left: -30px;
+  position: absolute;
+}
+.card-img-bottom {
+  margin-top: 200px;
+}
+img {
+ border-radius: 4px;
+}
+.card-title::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 117.5%;
+  background:#F9943B;
+  margin: 0 -21px;
+}
+
+/* TELA DE MOTOS */
+.search {
+  margin-bottom: 20px;
+}
+.preco {
+  margin-top: 20px;
+}
+.card {
+  background-color: #00000014;
+}
+.titulo-moto::before {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 200px;
+  background:#F9943B;
+}
+.main-motos {
+  margin-top: 40px;
+}
+
+/* CRUD */
+.crud-img {
+  width: 100px;
+  max-width: 100%;
+  
+}
+.table {
+  margin: 60px 0;
+}
+.box-quantidade {
+  width: 80px;
+  border-top: 1px solid  rgb(174, 146, 146);
+  border-bottom: 1px solid rgb(174, 146, 146);
+  border-right: 1px solid rgb(174, 146, 146);
+  display: flex;
+}
+.quantidade {
+  padding:0 10px;
+  text-align: center;
+  border-left: 1px solid  rgb(174, 146, 146);
+}
+.crud-btn {
+  gap: 20px;
+}
+/* Login funcionário */
+.login-funcionario:hover {
+ font-size: 15px;
+}

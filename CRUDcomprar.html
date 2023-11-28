@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="header-bg">
+    <nav class="nav navbar navbar-expand-lg navbar-black bg-black">
+      <a class="navbar-brand" href="#">
+        <img src="/img/LogoMotoLife.svg" alt="MotoLife">
+      </a>
+      <div class="div-nav collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white text-size" href="#moto-lista">Motos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white text-size" href="./seguros.html">Seguros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white text-size" href="#">Contato</a>
+          </li>
+          <li class="icone-perfil">
+            <a class="nav-link" href="./login.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+              </svg>
+            </a>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+<body>
+  <main class="container">
+    <table class="table table-striped table-bordered">
+      <caption>Lista de Motos</caption>
+      <tr>
+        <th></th>
+        <th>Moto</th>
+        <th>Preço</th>
+        <th>Quantidade</th>
+        <th>Subtotal</th>
+        <th>Ações</th>
+      </tr>
+      <tr>
+        <td>
+            <img class="crud-img" src="./img/motoneta.jpg" alt="...">
+        </td>
+        <td>Vespa</td>
+        <td>R$42.000</td>
+        <td>
+          <div class="input-group">
+            <button type="button" class="btn btn-outline-dark btn-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+              </svg>
+            </button>
+            <input type="number">
+            <button type="button" class="btn btn-outline-dark btn-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+              </svg>
+            </button>
+          </div>
+        </td>
+        <td>R$42.000</td>
+        <td>
+          <button type="button" class="btn btn-outline-dark btn-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+              <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+            </svg>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <th colspan="4"></th>
+        <th colspan="2">Total: R$42.000</th>
+      </tr>
+    </table>
+    <!-- MODAL -->
+    <div class="modal fade" id="exampleModalToggle" aria-labelledby="exampleModalToggleLabel" tabindex="-1" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Compra Finalizada com Sucesso!</h1>
+            <button class="btn-modal-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+          </div>
+          <div class="modal-body font-1">
+            Logo mais, um dos nossos vendedores entrará em contato com você!
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- botão -->
+    <div class="crud-btn d-flex justify-content-end">
+      <a class="btn btn-geral" href="#">Continuar comprando</a>
+      <a class="btn btn-geral" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Finalizar</a>
+    </div>
+  </main>
+</body>
+  <footer class="footer-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <a href="#">
+            <img src="/img/LogoMotoLife.svg" alt="MotoLife">
+          </a>
+        </div>
+        <div class="col-md-6">
+          <ul class="list-unstyled">
+            <li>Email: mailtoMoto@mail.com</li>
+            <li>Contato: (99) 9.9999-9999</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

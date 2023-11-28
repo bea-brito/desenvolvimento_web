@@ -1,0 +1,55 @@
+/* CORES e BACKGROUND*/
+.cor-1 {
+  color: #F9943B;
+}
+.bg-black {
+  background-color: black;
+}
+.bg-detalhe {
+  background-color: rgba(255, 255, 255, 0.048);
+}
+
+/* BOTÃO */
+.btn-geral {
+background-color: #F9943B;
+padding:16px 46px;
+font-size: 24px;
+margin-top: 40px;
+}
+.btn-geral:hover {
+  background-color: #f9943bdd;
+}
+.btn-search {
+  background-color: #F9943B;
+  margin-left: 4px;
+  }
+.btn-modal-close {
+  border: none;
+  background-color: white;
+}
+/* BODY */
+body {
+  font-family: BERNIER;
+}
+p {
+  margin: 0;
+}
+/* FONTES */
+.font-1 {
+  font-size: 24px;
+  font-family:'Times New Roman', Times, serif;
+  line-height: 1.5em;
+}
+.font-2 {
+  font-size:64px ;
+}
+.font-3 {
+  font-size: 16px;
+  font-family:'Times New Roman', Times, serif;
+}
+.font-4 {
+  font-size: 34px;
+}
+.font-5 {
+  font-size: 24px;
+}

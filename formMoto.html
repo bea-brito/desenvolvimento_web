@@ -25,6 +25,8 @@
                 document.getElementById('modelo').value           =   response.data.modelo;
                 document.getElementById('ano').value     =   response.data.ano;
                 document.getElementById('preco').value     =   response.data.preco;
+                document.getElementById('imagem').value     =   response.data.imagem;
+                document.getElementById('km').value     =   response.data.km;
 
             })
             .catch(function (err) {
@@ -35,9 +37,9 @@
 
         function titulo() {
             if (id) {
-                document.getElementById("titulo").innerHTML = 'PUT with AXIOS'
+                document.getElementById("titulo").innerHTML = 'Atualizar Moto'
             } else {
-                document.getElementById("titulo").innerHTML = 'POST with AXIOS'
+                document.getElementById("titulo").innerHTML = 'Adicionar Moto'
             }
         }
         
@@ -89,6 +91,14 @@
                         <input type="text" class="form-control" id="preco">
                     </div>
                     <div class="mb-3">
+                        <label for="imagem" class="form-label">Imagem</label>
+                        <input type="text" class="form-control" id="imagem">
+                    </div>
+                    <div class="mb-3">
+                        <label for="km" class="form-label">Km</label>
+                        <input type="text" class="form-control" id="km">
+                    </div>
+                    <div class="mb-3">
 
                     <div id="botao"><script>botao();</script></div>
                         
@@ -106,12 +116,17 @@
         const modeloInput       =   document.getElementById("modelo");
         const anoInput =   document.getElementById("ano");
         const precoInput =   document.getElementById("preco");
+        const imagemInput =   document.getElementById("imagem");
+        const kmInput =   document.getElementById("km");
 
         btn.addEventListener("click", () => {
             const _id         =   _idInput.value;
             const modelo        =   modeloInput.value;
             const ano  =   anoInput.value;
             const preco  =   precoInput.value;
+            const imagem  =   imagemInput.value;
+            const km  =   kmInput.value;
+
 
             if (_id === '') {
 
@@ -119,7 +134,9 @@
 
                     modelo:modelo,
                     ano:parseInt(ano),
-                    preco:preco
+                    preco:preco,
+                    imagem:imagem,
+                    km:parseInt(km)
 
                 })
                 .then((response) => {
@@ -140,7 +157,9 @@
 
                     modelo:modelo,
                     ano:parseInt(ano),
-                    preco:preco
+                    preco:preco,
+                    imagem:imagem,
+                    km:parseInt(km)
 
                 })
                 .then((response) => {

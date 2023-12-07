@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <header class="header-bg">
         <nav class="nav navbar navbar-expand-lg navbar-black bg-black">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="./index.html">
                 <img src="./img/LogoMotoLife.svg" alt="MotoLife">
             </a>
             <div class="div-nav collapse navbar-collapse" id="navbarNav">
@@ -22,7 +22,7 @@
                         <a class="nav-link text-white text-size" href="./CRUD.html">CRUD</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white text-size" href="./index.html">Motos</a>
+                        <a class="nav-link text-white text-size" href="./listaMotos.html">Motos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white text-size" href="./seguros.html">Seguros</a>
@@ -60,6 +60,8 @@
                     <th scope="col">Modelo</th>
                     <th scope="col">Ano</th>
                     <th scope="col">Preço</th>
+                    <th scope="col">Imagem</th>
+                    <th scope="col">Quilometragem</th>
                     <th scope="col"></th>
 
                   </tr>
@@ -98,7 +100,42 @@
         </div>
     </div>
 </footer>
+<Script>
+    axios.get('http://localhost:3000/moto')
+  .then(function (response) {
+    document.getElementById('exibir').innerHTML = response.data.map(function (moto) {
+      return (
+        '<tr>' +
+        '<td> <a class="btn btn-outline-info btn-sm" href="#" role="button" onclick="javascript:return editarMoto(`' + moto._id + '`);">Editar</a> </td>' +
+        '<th scope="row">' + moto._id + '</th>' +
+        '<td>' + moto.modelo + '</td>' +
+        '<td>' + moto.ano + '</td>' +
+        '<td>' + moto.preco + '</td>' +
+        '<td>' + moto.imagem + '</td>' +
+        '<td>' + moto.km + '</td>' +
+        '<td> <a class="btn btn-outline-danger btn-sm" href="#" role="button" onclick="javascript:return excluirMoto(`' + moto._id + '`);">Excluir</a> </td>' +
+        '</tr>'
+      );
+    }).join('');
+  })
+  .catch(function (err) {
+    document.getElementById('output').innerHTML = '<div class="alert alert-danger" role="alert">' + err.message + '</div>';
+  });
 
+function excluirMoto(id) {
+  axios.delete('http://localhost:3000/moto/' + id + '')
+    .then(function (response) {
+      location.reload();
+    })
+    .catch(function (err) {
+      document.getElementById("output").innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>' + err.message + '</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+    });
+}
+
+function editarMoto(id) {
+  window.location.href = 'formMoto.html?id=' + id + '';
+}
+</Script>
 
 </body>
 </html>

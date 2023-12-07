@@ -16,6 +16,10 @@ const motoSchema = mongoose.Schema(
         },
         imagem :{
             type: String,
+        },
+        km:{
+            type:Number,
+            required:[true,"Por favor insira ano"]
         }
     },
     {

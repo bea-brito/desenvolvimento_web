@@ -13,6 +13,9 @@ const motoSchema = mongoose.Schema(
         preco:{
             type: String,
             required:[true,"Por favor insira preço"]
+        },
+        imagem :{
+            type: String,
         }
     },
     {

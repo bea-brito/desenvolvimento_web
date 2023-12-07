@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTTP Request</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+    <header class="header-bg">
+        <nav class="nav navbar navbar-expand-lg navbar-black bg-black">
+            <a class="navbar-brand" href="#">
+                <img src="./img/LogoMotoLife.svg" alt="MotoLife">
+            </a>
+            <div class="div-nav collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-size" href="./CRUD.html">CRUD</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-size" href="./index.html">Motos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-size" href="./seguros.html">Seguros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-size" href="#">Contato</a>
+                    </li>
+                    <li class="icone-perfil">
+                        <a class="nav-link" href="./login.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white"
+                                class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                            </svg>
+                        </a>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
     <div class="container">
         <div class="row">
             <h1>Lista de Clientes</h1>
@@ -20,33 +61,35 @@
         <div class="row">
             <table class="table">
                 <thead>
-                  <tr>
-                    <th scope="col"></th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Senha</th>
-                    <th scope="col">CEP</th>
-                    <th scope="col">Rua</th>
-                    <th scope="col">Complemento</th>
-                    <th scope="col">Bairro</th>
-                    <th scope="col">Cidade</th>
-                    <th scope="col"></th>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">Senha</th>
+                        <th scope="col">CEP</th>
+                        <th scope="col">Rua</th>
+                        <th scope="col">Complemento</th>
+                        <th scope="col">Bairro</th>
+                        <th scope="col">Cidade</th>
+                        <th scope="col"></th>
 
-                  </tr>
+                    </tr>
                 </thead>
                 <tbody id="exibir">
-                  
+
                 </tbody>
-              </table>
+            </table>
         </div>
         <div class="row">
             <div class="col">
                 <a class="icon-link" href="formCliente.html">
-                    Novo  Cadastro
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    Novo Cadastro
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
                     </svg>
                 </a>
             </div>
@@ -54,47 +97,64 @@
     </div>
     <script>
         axios.get('http://localhost:3000/cliente')
-            .then(function (response){
-             document.getElementById('exibir').innerHTML = response.data.map(function (cliente){
-                return (
-                    '<tr>' +
-                        '<td> <a class="btn btn-outline-info btn-sm" href="#" role="button" onclick="javascript:return editarCliente(`'+cliente._id+'`);">Editar</a> </td>' +
-                        '<th scope="row">'+ cliente._id +'</th>' +
-                        '<td>'+ cliente.nome +'</td>' +
-                        '<td>'+ cliente.email +'</td>' +
-                        '<td>'+ cliente.telefone +'</td>' +
-                        '<td>'+ cliente.senha +'</td>' +
-                        '<td>'+ cliente.CEP +'</td>' +
-                        '<td>'+ cliente.rua +'</td>' +
-                        '<td>'+ cliente.complemento +'</td>' +
-                        '<td>'+ cliente.bairro +'</td>' +
-                        '<td>'+ cliente.cidade +'</td>' +
-                        '<td> <a class="btn btn-outline-danger btn-sm" href="#" role="button" onclick="javascript:return excluirCliente(`'+cliente._id+'`);">Excluir</a> </td>' +
-                    '</tr>'
-                );
-             }).join('');   
+            .then(function (response) {
+                document.getElementById('exibir').innerHTML = response.data.map(function (cliente) {
+                    return (
+                        '<tr>' +
+                        '<td> <a class="btn btn-outline-info btn-sm" href="#" role="button" onclick="javascript:return editarCliente(`' + cliente._id + '`);">Editar</a> </td>' +
+                        '<th scope="row">' + cliente._id + '</th>' +
+                        '<td>' + cliente.nome + '</td>' +
+                        '<td>' + cliente.email + '</td>' +
+                        '<td>' + cliente.telefone + '</td>' +
+                        '<td>' + cliente.senha + '</td>' +
+                        '<td>' + cliente.CEP + '</td>' +
+                        '<td>' + cliente.rua + '</td>' +
+                        '<td>' + cliente.complemento + '</td>' +
+                        '<td>' + cliente.bairro + '</td>' +
+                        '<td>' + cliente.cidade + '</td>' +
+                        '<td> <a class="btn btn-outline-danger btn-sm" href="#" role="button" onclick="javascript:return excluirCliente(`' + cliente._id + '`);">Excluir</a> </td>' +
+                        '</tr>'
+                    );
+                }).join('');
             })
-            .catch(function (err){
-                document.getElementById('output').innerHTML = '<div class="alert alert-danger" role="alert">'+ err.message +'</div>';
+            .catch(function (err) {
+                document.getElementById('output').innerHTML = '<div class="alert alert-danger" role="alert">' + err.message + '</div>';
             });
 
         function excluirCliente(id) {
-            axios.delete('http://localhost:3000/cliente/'+ id +'')
-            .then(function(response){
-                location.reload();
-            })
-            .catch(function (err){
-                document.getElementById("output").innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>'+ err.message +'</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
-            });
+            axios.delete('http://localhost:3000/cliente/' + id + '')
+                .then(function (response) {
+                    location.reload();
+                })
+                .catch(function (err) {
+                    document.getElementById("output").innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>' + err.message + '</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                });
         }
 
         function editarCliente(id) {
-            window.location.href = 'formCliente.html?id='+ id +'';
+            window.location.href = 'formCliente.html?id=' + id + '';
         }
-            
-    </script>
 
+    </script>
+    <footer class="footer-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="#">
+                        <img src="./img/LogoMotoLife.svg" alt="MotoLife">
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li>Email: mailtoMoto@mail.com</li>
+                        <li>Contato: (99) 9.9999-9999</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
 </body>
+
 </html>

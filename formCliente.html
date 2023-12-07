@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Request</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        const urlParams =   new URLSearchParams(window.location.search);
+        const id        =   urlParams.get("id");
+
+        if (id !== null) {
+
+            axios.get('http://localhost:3000/cliente/'+ id +'')
+            .then(function (response) {
+                document.getElementById('_id').value            =   response.data._id;
+                document.getElementById('id').value      =   response.data._id;
+                document.getElementById('id').readOnly   =   true;
+                document.getElementById('nome').value           =   response.data.nome;
+                document.getElementById('email').value     =   response.data.email;
+                document.getElementById('telefone').value     =   response.data.telefone;
+                document.getElementById('senha').value     =   response.data.senha;
+                document.getElementById('CEP').value     =   response.data.CEP;
+                document.getElementById('rua').value     =   response.data.rua;
+                document.getElementById('complemento').value     =   response.data.complemento;
+                document.getElementById('bairro').value     =   response.data.bairro;
+                document.getElementById('cidade').value     =   response.data.cidade;
+
+            })
+            .catch(function (err) {
+                alert(err.message);
+            });
+
+        }
+
+        function titulo() {
+            if (id) {
+                document.getElementById("titulo").innerHTML = 'Atualizar Cliente'
+            } else {
+                document.getElementById("titulo").innerHTML = 'Adicionar Cliente'
+            }
+        }
+        
+        function botao() {
+            if (id) {
+                document.getElementById("botao").innerHTML = '<button type="button" id="btn" class="btn btn-primary">Atualizar</button>'
+            } else {
+                document.getElementById("botao").innerHTML = '<button type="button" id="btn" class="btn btn-success">Cadastrar</button>'
+            }
+        }
+                
+
+    </script>
+
+    <div class="container">
+        <div class="row">
+            <h1 id="titulo"><script>titulo();</script></h1>
+            <hr>
+            <div id="output"></div>
+            <a class="icon-link" href="indexCliente.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                </svg>
+                Verificar Lista
+            </a>
+        </div>
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+                <form action="" id="form">
+                    <input type="hidden" class="form-control" id="_id">
+                    <div class="mb-3">
+                        <label for="id" class="form-label">ID</label>
+                        <input type="text" class="form-control" id="id">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="text" class="form-control" id="telefone">
+                    </div>
+                    <div class="mb-3">
+                        <label for="senha" class="form-label">Senha</label>
+                        <input type="text" class="form-control" id="senha">
+                    </div>
+                    <div class="mb-3">
+                        <label for="CEP" class="form-label">CEP</label>
+                        <input type="text" class="form-control" id="CEP">
+                    </div>
+                    <div class="mb-3">
+                        <label for="rua" class="form-label">Rua</label>
+                        <input type="text" class="form-control" id="rua">
+                    </div>
+                    <div class="mb-3">
+                        <label for="complemento" class="form-label">Complemento</label>
+                        <input type="text" class="form-control" id="complemento">
+                    </div>
+                    <div class="mb-3">
+                        <label for="bairro" class="form-label">Bairro</label>
+                        <input type="text" class="form-control" id="bairro">
+                    </div>
+                    <div class="mb-3">
+                        <label for="cidade" class="form-label">Cidade</label>
+                        <input type="text" class="form-control" id="cidade">
+                    </div>
+                    <div class="mb-3">
+
+                    <div id="botao"><script>botao();</script></div>
+                        
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        const form            =   document.getElementById("form");
+        const _idInput        =   document.getElementById("_id");
+        const nomeInput       =   document.getElementById("nome");
+        const emailInput =   document.getElementById("email");
+        const telefoneInput =   document.getElementById("telefone");
+        const senhaInput =   document.getElementById("senha");
+        const CEPInput =   document.getElementById("CEP");
+        const ruaInput =   document.getElementById("rua");
+        const complementoInput =   document.getElementById("complemento");
+        const bairroInput =   document.getElementById("bairro");
+        const cidadeInput =   document.getElementById("cidade");
+
+        btn.addEventListener("click", () => {
+            const _id         =   _idInput.value;
+            const nome        =   nomeInput.value;
+            const email  =   emailInput.value;
+            const telefone  =   telefoneInput.value;
+            const senha  =   senhaInput.value;
+            const CEP  =   CEPInput.value;
+            const rua  =   ruaInput.value;
+            const complemento=complementoInput.value;
+            const bairro=bairroInput.value;
+            const cidade=cidadeInput.value;
+
+            if (_id === '') {
+
+                axios.post("http://localhost:3000/cliente", {
+
+                    nome: nome,
+                    email: email,
+                    telefone:parseInt(telefone),
+                    senha: senha,
+                    CEP: parseInt(CEP),
+                    rua: rua,
+                    complemento:complemento,
+                    bairro:bairro,
+                    cidade:cidade
+
+
+                })
+                .then((response) => {
+                    output.innerHTML    =   `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                                            <strong>Perfeito!</strong> Cadastro efetuado com sucesso.
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                            </div>`;
+                    form.reset()                       
+                
+                })
+                .catch(function (err){
+                    document.getElementById("output").innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>'+ err.message +'</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                })
+
+            } else {
+                
+                axios.put('http://localhost:3000/cliente/'+ _id +'', {
+
+                    nome: nome,
+                    email: email,
+                    telefone:parseInt(telefone),
+                    senha: senha,
+                    CEP: parseInt(CEP),
+                    rua: rua,
+                    complemento:complemento,
+                    bairro:bairro,
+                    cidade:cidade
+
+                })
+                .then((response) => {
+
+                    output.innerHTML    =   `<div class="alert alert-primary alert-dismissible fade show" role="alert">
+                                            <strong>Perfeito!</strong> Atualização efetuada com sucesso.
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                            </div>`;                     
+                
+                })
+                .catch(function (err){
+                    document.getElementById("output").innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>'+ err.message +'</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                })
+            }
+    });
+
+    </script>
+    
+</body>
+</html>

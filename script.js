@@ -1,10 +1,3 @@
-document.getElementById('login-form').addEventListener('submit', function(event) {
-  if (!this.checkValidity()) {
-    event.preventDefault();
-    event.stopPropagation();
-  }
-  this.classList.add('was-validated');
-});
 // Barra de busca
 function redirect() {
   // Obtém o valor digitado na caixa de pesquisa
